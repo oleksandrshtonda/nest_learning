@@ -1,13 +1,20 @@
-import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
 import { ProductModule } from './product.module';
 import { FindProductDto } from './dto/fintd-product.dto';
 
 @Controller('product')
 export class ProductController {
   @Post('create')
-  async create(@Body() dto: Omit<ProductModule, '_id'>) {
-
-  }
+  async create(@Body() dto: Omit<ProductModule, '_id'>) {}
 
   @Get(':id')
   async get(@Param('id') id: string) {}
